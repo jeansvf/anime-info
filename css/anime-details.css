@@ -1,0 +1,92 @@
+:root {
+    background: #2f2f2f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+    font-size: 30px;
+    color: #ffffff;
+
+}
+
+.loading-gif {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 100px;
+}
+
+.main-header {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    align-items: center;
+    height: 50px;
+    background: #34bde0;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-bar-item {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-bar-search-input {
+    padding: 5px;
+    border-radius: 5px;
+    background: #2f2f2f;
+    outline: none;
+    color: #ffffff;
+}
+
+.nav-bar-search-input::placeholder{
+    color: #e1e1e1c2;
+}
+
+.anime-details {
+    display: flex;
+    padding-top: 100px;
+    margin-left: 50px;
+}
+
+.anime-image {
+    width: 320px;
+}
+
+.anime-title {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.left-side {
+    width: 320px;
+}
+
+.right-side {
+    margin-left: 10px;
+}
+
+.anime-synopsis {
+    font-size: 15px;
+    color: #ffffff;
+    width: 600px;
+}
+
+.anime-genre {
+    color: #707070;
+}
