@@ -1,6 +1,8 @@
 const animeWrapper = document.querySelector(".anime-wrapper");
 const mainWrapper = document.querySelector(".main-wrapper");
-const hoverMenu = document.querySelector(".hover-menu");
+const searchInput = document.querySelector(".nav-bar-search-input");
+const dropdownButton = document.querySelector("[data-dropdown-button]");
+const dropdownMenu = document.querySelector("[data-dropdown]");
 
 fetch("https://gogoanime.consumet.org/popular")
   .then((response) => response.json())
@@ -42,6 +44,30 @@ function createLoadingAnimation() {
     loadingGif.src="./images/loading.gif";
     mainWrapper.appendChild(loadingGif);
 }
+
+searchInput.addEventListener("keydown", e => {
+    if (e.key === "Enter" && searchInput.value !== "") {
+        window.localStorage.setItem("searched-key", searchInput.value);
+        searchInput.value = "";
+        window.location="./search-anime.html";
+    }
+})
+// code for the genre dropdown menu
+
+document.addEventListener("click", (e) => {
+    let clickedDropdownButton = e.target.matches("[data-dropdown-button]");
+    let clickedDropdownMenu = e.target.matches("[data-dropdown]");
+    let dropdownMenuExists = document.querySelector("[data-dropdown].active");
+
+    if (dropdownMenuExists !== null && clickedDropdownButton) {
+        dropdownMenu.classList.remove("active");
+    } else {
+        dropdownMenu.classList.add("active");
+    }
+    if (!clickedDropdownMenu && !clickedDropdownButton) {
+        dropdownMenu.classList.remove("active");
+    }
+})
 
 /*
 class AnimeBlueprint {

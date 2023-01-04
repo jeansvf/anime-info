@@ -15,15 +15,6 @@ h2 {
 
 }
 
-.loading-gif {
-    display: flex;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    width: 100px;
-}
-
 .main-header {
     display: flex;
     position: fixed;
@@ -87,6 +78,7 @@ h2 {
     width: 600px;
 }
 
-.anime-genre {
+.anime-genre, .anime-status, .anime-release, .anime-total-episodes {
     color: #707070;
+    padding: 2px 0; 
 }

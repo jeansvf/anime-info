@@ -9,10 +9,6 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-svg {
-    pointer-events: none;
-}
-
 .loading-gif {
     display: flex;
     position: fixed;
@@ -41,34 +37,7 @@ svg {
 .nav-bar-item {
     padding: 10px;
     text-decoration: none;
-    color: #ffffff;
-}
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown.active .dropdown-menu {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-.dropdown-menu {
-    position: absolute;
-    background: #ffffff;
-    padding: 10px;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: 150ms ease-in-out;
-}
-
-.nav-bar-item-genre {
-    padding: 10px;
-    text-decoration: none;
-    color: #ffffff;
-    cursor: pointer;
+    color: white;
 }
 
 .nav-bar-search-input {
