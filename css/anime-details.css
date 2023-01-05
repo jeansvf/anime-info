@@ -9,6 +9,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+svg {
+    pointer-events: none;
+}
+
 h2 {
     font-size: 30px;
     color: #ffffff;
@@ -69,6 +73,8 @@ h2 {
 }
 
 .right-side {
+    display: flex;
+    flex-direction: column;
     margin-left: 10px;
 }
 
@@ -76,6 +82,25 @@ h2 {
     font-size: 15px;
     color: #ffffff;
     width: 600px;
+}
+
+.add-to-list-wrapper {
+    display: flex;
+    width: 200px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.plus-sign-svg {
+    width: 14px;
+    padding-right: 6px;
+    align-items: center;
+}
+
+.add-to-list {
+    font-size: 14px;
+    text-decoration: underline;
+    color: #44be60;
 }
 
 .anime-genre, .anime-status, .anime-release, .anime-total-episodes {

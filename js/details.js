@@ -5,6 +5,7 @@ const animeGenre = document.querySelector(".anime-genre");
 const animeStatus = document.querySelector(".anime-status");
 const animeRelease = document.querySelector(".anime-release");
 const animeTotalEpisodes = document.querySelector(".anime-total-episodes");
+const addToListButton = document.querySelector(".add-to-list");
 
 selectedAnime = JSON.parse(localStorage.getItem("selected-anime"));
 
@@ -18,5 +19,6 @@ function setAnimeDetails() {
     animeStatus.textContent = "Status: " + selectedAnime.status;
     animeRelease.textContent = "Released: " + selectedAnime.releasedDate;
     animeTotalEpisodes.textContent = "Total Episodes: " + selectedAnime.totalEpisodes;
-    console.log(selectedAnime);
 }
+
+// DO THE LIST FEATURE

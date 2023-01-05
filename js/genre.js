@@ -1,14 +1,17 @@
+const mainWrapper = document.querySelector(".main-wrapper")
 const animeWrapper = document.querySelector(".anime-wrapper");
 const mainTitle = document.querySelector(".main-title");
+var selectedGenre = localStorage.getItem("selected-genre");
 
-var searchedKey = localStorage.getItem("searched-key");
-mainTitle.innerText = `Results for "${searchedKey}"`
-fetch(`https://gogoanime.consumet.org/search?keyw=${searchedKey}`)
-.then((response) => response.json())
-.then((data) => (data.map((e) => {
-    createAnime(e.animeTitle, e.animeImg, e.animeId)
+mainTitle.innerText = selectedGenre;
+fetch(`https://gogoanime.consumet.org/genre/${selectedGenre}`)
+    .then((response) => response.json())
+    .then((animelist) => animelist.forEach((element) => {
+    createAnime(element.animeTitle, element.animeImg, element.animeId)
+}))    
+.catch((err) => {
+    mainTitle.innerText = "Genre not found"
 })
-))
 
 function createAnime(title, image, id) {
     let animeElement = document.createElement("a");
@@ -49,5 +52,5 @@ function createLoadingAnimation() {
     let loadingGif = document.createElement("img");
     loadingGif.classList.add("loading-gif");
     loadingGif.src="./images/loading.gif";
-    animeWrapper.appendChild(loadingGif);
+    mainWrapper.appendChild(loadingGif);
 }

@@ -3,12 +3,14 @@ const mainWrapper = document.querySelector(".main-wrapper");
 const searchInput = document.querySelector(".nav-bar-search-input");
 const dropdownButton = document.querySelector("[data-dropdown-button]");
 const dropdownMenu = document.querySelector("[data-dropdown]");
+const genreItem = document.querySelector(".genre-item");
 
 fetch("https://gogoanime.consumet.org/popular")
   .then((response) => response.json())
   .then((animelist) => animelist.forEach((element) => {
     createAnime(element.animeTitle, element.animeImg, element.animeId);
-  }))
+})
+)
 
 function createAnime(title, image, id) {
     let animeElement = document.createElement("a");
@@ -18,7 +20,7 @@ function createAnime(title, image, id) {
     let animeTitle = document.createElement("h2");
     animeTitle.classList.add("anime-title");
 
-    animeTitle.innerText = title;
+    animeTitle.innerText = truncate(title);
     animeImage.src = image;
     
     animeElement.appendChild(animeImage);
@@ -38,6 +40,13 @@ function createAnime(title, image, id) {
     })
 }
 
+function truncate(input) {
+    if (input.length > 60) {
+        return input.substring(0, 60) + '...';
+    }
+    return input;
+}
+
 function createLoadingAnimation() {
     let loadingGif = document.createElement("img");
     loadingGif.classList.add("loading-gif");
@@ -52,13 +61,18 @@ searchInput.addEventListener("keydown", e => {
         window.location="./search-anime.html";
     }
 })
+
 // code for the genre dropdown menu
 
 document.addEventListener("click", (e) => {
     let clickedDropdownButton = e.target.matches("[data-dropdown-button]");
     let clickedDropdownMenu = e.target.matches("[data-dropdown]");
     let dropdownMenuExists = document.querySelector("[data-dropdown].active");
+    let clickedGenreItem = e.target.matches(".genre-item");
 
+    if (clickedGenreItem) {
+        localStorage.setItem("selected-genre", e.target.innerText);
+    }
     if (dropdownMenuExists !== null && clickedDropdownButton) {
         dropdownMenu.classList.remove("active");
     } else {
@@ -67,12 +81,5 @@ document.addEventListener("click", (e) => {
     if (!clickedDropdownMenu && !clickedDropdownButton) {
         dropdownMenu.classList.remove("active");
     }
-})
 
-/*
-class AnimeBlueprint {
-    constructor(name){
-        this.name = name;
-    }
-}
-*/
+})
