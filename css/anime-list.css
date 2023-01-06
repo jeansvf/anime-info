@@ -60,3 +60,12 @@ svg {
     text-decoration: none;
     color: #ffffff;
 }
+
+.list {
+    color: #2e2e2e;
+    text-decoration: underline;
+}
+
+.list:hover {
+    color: #000000;
+}

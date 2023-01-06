@@ -16,7 +16,6 @@ svg {
 h2 {
     font-size: 30px;
     color: #ffffff;
-
 }
 
 .main-header {
@@ -39,6 +38,15 @@ h2 {
     padding: 10px;
     text-decoration: none;
     color: white;
+}
+
+.list {
+    color: #2e2e2e;
+    text-decoration: underline;
+}
+
+.list:hover {
+    color: #000000;
 }
 
 .nav-bar-search-input {
@@ -101,6 +109,14 @@ h2 {
     font-size: 14px;
     text-decoration: underline;
     color: #44be60;
+}
+
+.add-to-list-wrapper:active .plus-sign-svg {
+    fill: #25933f;
+}
+
+.add-to-list-wrapper:active .add-to-list {
+    color: #25933f;
 }
 
 .anime-genre, .anime-status, .anime-release, .anime-total-episodes {
